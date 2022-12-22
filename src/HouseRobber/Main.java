@@ -15,10 +15,17 @@ public class Main {
         }
 
     }
+
     //-----------------dynamic programming solution----
     public static int rob(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        if (nums.length == 2) {
+            return Math.max(nums[0], nums[1]);
         }
         int[] dp = new int[nums.length];
         dp[0] = nums[0];
@@ -28,6 +35,7 @@ public class Main {
         }
         return dp[nums.length - 1];
     }
+
     //--------------------------linear sol----
     public static int rob2(int[] nums) {
         int rob = 0; //max monney can get if rob current house
